@@ -1,19 +1,19 @@
 <snippet>
     <content><![CDATA[
 function mix (receiver, supplier, override){
-  var key;
+    var key;
 
-  if(arguments.length === 2){
-    override = true;
-  }
-
-  for(key in supplier){
-    if(override || !(key in receiver)){
-      receiver[key] = supplier[key]
+    if(arguments.length === 2){
+        override = true;
     }
-  }
 
-  return receiver;
+    for(key in supplier){
+        if(override || !(key in receiver)){
+            receiver[key] = supplier[key]
+        }
+    }
+
+    return receiver;
 }
 ]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->

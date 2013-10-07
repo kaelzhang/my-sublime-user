@@ -1,12 +1,12 @@
 <snippet>
     <content><![CDATA[
 new Ajax({
-  url: "${1:url}"
+    url: "${1:url}"
 
 }).on({
-  success: function(response){
+    success: function(response){
         
-  }
+    }
 }).send();
 ]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
