@@ -1,0 +1,18 @@
+<snippet>
+    <content><![CDATA[
+new Ajax({
+  url: "${1:url}"
+
+}).on({
+  success: function(response){
+        
+  }
+}).send();
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>Ajax</tabTrigger>
+    <tabTrigger>ajax</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.js</scope>
+    <scope>source.html</scope>
+</snippet>

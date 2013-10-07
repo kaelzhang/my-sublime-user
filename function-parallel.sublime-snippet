@@ -1,0 +1,42 @@
+<snippet>
+    <content><![CDATA[
+function parallel (tasks, callback) {
+    
+  var i = 0;
+  var len = tasks.length;
+  var counter = len;
+  var task;
+  var error = false;
+
+  function poll(err){
+    -- counter;
+    if((error = err) || counter === 0){
+      callback(err);
+    }
+  }
+
+  for(; i < len; i ++){
+    task = tasks[i];
+
+    if(!error){
+
+      // has no `done` param, task is considered as sync method
+      if(task.length === 0){
+          task();
+          poll(); // without error
+
+      }else{
+          task(poll);
+      }
+
+    }else{
+      break;
+    }
+  }
+};
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>fparallel</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>
